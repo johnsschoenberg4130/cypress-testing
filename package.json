@@ -1,0 +1,26 @@
+{
+  "name": "cypress-testing",
+  "version": "1.0.0",
+  "description": "testing suite for QA projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "start",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnsschoenberg4130/cypress-testing.git"
+  },
+  "keywords": [
+    "cypress-testing"
+  ],
+  "author": "Sam Schoenberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnsschoenberg4130/cypress-testing/issues"
+  },
+  "homepage": "https://github.com/johnsschoenberg4130/cypress-testing#readme",
+  "devDependencies": {
+    "cypress": "^13.6.1"
+  }
+}
