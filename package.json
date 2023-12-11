@@ -1,26 +1,21 @@
 {
   "name": "cypress-testing",
   "version": "1.0.0",
-  "description": "testing suite for QA projects",
+  "description": "testing suite for Warp and Loom ",
   "main": "index.js",
   "scripts": {
-    "test": "start",
+    "test": "test",
     "cypress:open": "cypress open"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johnsschoenberg4130/cypress-testing.git"
-  },
   "keywords": [
-    "cypress-testing"
+    "testing",
+    "cypress"
   ],
   "author": "Sam Schoenberg",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/johnsschoenberg4130/cypress-testing/issues"
-  },
-  "homepage": "https://github.com/johnsschoenberg4130/cypress-testing#readme",
   "devDependencies": {
-    "cypress": "^13.6.1"
+    "@4tw/cypress-drag-drop": "^2.2.5",
+    "cypress": "^13.6.1",
+    "typescript": "^5.3.3"
   }
 }
