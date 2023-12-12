@@ -21,7 +21,7 @@ describe("Component View", () => {
     cy.get("button.el-button.el-button--success.el-button--small")
     .find("span")
     .contains("Lock Treatment")
-    .click();
+    .click().wait(500); // wait for 1
     dragComponentToWorkSpace('Header', {
       source: { x:300 , y: 400 },
       target: { position: 'left' },
