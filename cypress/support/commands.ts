@@ -10,8 +10,18 @@
 // ***********************************************
 //
 // -- drag command -
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+// -- This is a parent command for dev login --
+//  Cypress.Commands.add('LOGIN', () => { 
+//     cy.session( LOGIN, () =>{
+//         cy.visit("/");
+//         cy.get('[data-testid ="userid"]').type('dev'); 
+//         cy.get('[data-testid = "password"]').type('dev'); 
+//         cy.get('[data-testid="login-button"]').contains("Login").click();
+//         cy.url().should("eq", "https://localhost:8081/home/");
+//         cy.visit("https://localhost:8081/treatments/1/components");
+//     })
+   
+//  });
 //
 //
 // -- This is a child command --
@@ -39,3 +49,4 @@
 //     }
 //   }
 // }
+export{};
