@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "cypress:open": "cypress open"
+    "cypress": " npx cypress open"
   },
   "keywords": [
     "testing",

@@ -8,21 +8,52 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
-// -- drag command -
+
 // -- This is a parent command for dev login --
-//  Cypress.Commands.add('LOGIN', () => { 
-//     cy.session( LOGIN, () =>{
-//         cy.visit("/");
-//         cy.get('[data-testid ="userid"]').type('dev'); 
-//         cy.get('[data-testid = "password"]').type('dev'); 
-//         cy.get('[data-testid="login-button"]').contains("Login").click();
-//         cy.url().should("eq", "https://localhost:8081/home/");
-//         cy.visit("https://localhost:8081/treatments/1/components");
-//     })
+Cypress.Commands.add('LOGINDEV', () => { 
+    cy.visit("https://localhost:8081/");
+    cy.get('[data-testid="userid"]').type("dev");
+    cy.get('[data-testid= "password"]').type("dev");
+    cy.get('[data-testid="login-button"]').contains("Login").click();
+    cy.url().should("eq", "https://localhost:8081/home/");
+    });
+declare global{
+    namespace Cypress {
+        interface Chainable {
+            LOGINDEV():Chainable<Element>
+        }
+      } 
+}
+Cypress.Commands.add('LOGINEDIT', () => { 
+  cy.visit("https://localhost:8081/");
+  cy.get('[data-testid="userid"]').type("editor");
+  cy.get('[data-testid= "password"]').type("editor");
+  cy.get('[data-testid="login-button"]').contains("Login").click();
+  cy.url().should("eq", "https://localhost:8081/home/");
+  });
+declare global{
+  namespace Cypress {
+      interface Chainable {
+          LOGINEDIT():Chainable<Element>
+      }
+    } 
+}
+Cypress.Commands.add('LOGINREV', () => { 
+  cy.visit("https://localhost:8081/");
+  cy.get('[data-testid="userid"]').type("reviewer");
+  cy.get('[data-testid= "password"]').type("reviewer");
+  cy.get('[data-testid="login-button"]').contains("Login").click();
+  cy.url().should("eq", "https://localhost:8081/home/");
+  });
+declare global{
+  namespace Cypress {
+      interface Chainable {
+          LOGINREV():Chainable<Element>
+      }
+    } 
+}
+// -- This is a child drag command --
    
-//  });
-//
 //
 // -- This is a child command --
 //  Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { 
