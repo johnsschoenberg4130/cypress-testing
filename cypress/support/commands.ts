@@ -1,20 +1,12 @@
 /// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
+import '@testing-library/cypress/add-commands'
 
 // -- This is a parent command for dev login --
 Cypress.Commands.add('LOGINDEV', () => { 
     cy.visit("https://localhost:8081/");
-    cy.get('[data-testid="userid"]').type("dev");
-    cy.get('[data-testid= "password"]').type("dev");
-    cy.get('[data-testid="login-button"]').contains("Login").click();
+    cy.get('[data-test-id="userid"]').type("dev");
+    cy.get('[data-test-id= "password"]').type("dev");
+    cy.get('[data-test-id="login-button"]').contains("Login").click();
     cy.url().should("eq", "https://localhost:8081/home/");
     });
 declare global{
@@ -52,6 +44,21 @@ declare global{
       }
     } 
 }
+
+Cypress.Commands.add('AEMLOGIN', () =>{
+  cy.visit('https://damstage.vailresorts.com/libs/granite/core/content/login.html?resource=%2F&$$login$$=%24%24login%24%24&j_reason=unknown&j_reason_code=unknown')
+  cy.get('#username').type('john.s.schoenberg@vailresorts.com');
+  cy.get('#password').type('?ON2}32xGogV');
+  cy.get('#submit-button').click();
+});
+declare global{
+  namespace Cypress {
+      interface Chainable {
+          AEMLOGIN():Chainable<Element>
+      }
+    } 
+}
+
 // -- This is a child drag command --
    
 //

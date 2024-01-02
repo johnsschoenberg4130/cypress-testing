@@ -1,8 +1,10 @@
-import { defineConfig } from 'cypress'
-
+import { defineConfig } from "cypress";
 export default defineConfig({
-  e2e: {
-    baseUrl: 'https://localhost:8081/home/'
+  e2e: {},
+  component: {
+    devServer: {
+      framework: "vue-cli",
+      bundler: "webpack",
+    },
   },
-
-})
+});
